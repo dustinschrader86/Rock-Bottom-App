@@ -31,5 +31,15 @@ def extract_screenshot_data(raw_text: str):
         },
         "tags": [],
         "created_at": datetime.utcnow().isoformat()
+    }import re
+
+def detect_entities(raw_text: str):
+    return {
+        "wallet_addresses": re.findall(r"[1-9A-HJ-NP-Za-km-z]{32,44}", raw_text),
+        "token_tickers": re.findall(r"\b[A-Z]{2,6}\b", raw_text),
+        "contract_addresses": re.findall(r"[1-9A-HJ-NP-Za-km-z]{32,44}", raw_text),
+        "urls": re.findall(r"https?://\S+", raw_text),
+        "usernames": re.findall(r"@[A-Za-z0-9_]+", raw_text)
     }
+
 
