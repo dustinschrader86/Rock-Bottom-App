@@ -42,4 +42,5 @@ def detect_entities(raw_text: str):
         "usernames": re.findall(r"@[A-Za-z0-9_]+", raw_text)
     }
 
+from solana_verify import get_account_info
 
