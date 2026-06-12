@@ -1,8 +1,0 @@
-"wallets": [
-    {
-        "address": addr,
-        "exists_on_chain": get_account_info(addr) is not None
-    }
-    for addr in entities["wallet_addresses"]
-]
-
